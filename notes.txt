@@ -1,0 +1,13 @@
+project id: todo-1306
+
+to deploy locally
+dev_appserver.py todo/ --port 3000 --admin_port 8000
+
+to deploy to GAE
+appcfg.py -A todo-1306 -V v1  update ~/design/todo/
+
+url for site
+http://todo-1306.appspot.com/
+
+issue with deploying to dev_appserver.py
+lsof -P | grep ':8080' | awk '{print $2}' | xargs kill -9

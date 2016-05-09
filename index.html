@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <link type='text/css' rel='stylesheet' href='css/global.css' rel='stylesheet'>
+    <link type='text/css' rel='stylesheet' href='static/global.css' rel='stylesheet'>
 
     <meta charset='UTF-8'>
     <title>Title</title>
@@ -10,35 +10,37 @@
     </script>
 </head>
 <body>
-<div class='block blue'>
-    <form action='/test' method='get'>
 
-        <input type='text' name='todo_entry'>
+<div class="container">
 
-        <input type='submit' value='add a todo'>
-    </form>
-</div>
-<br>
-<br>
-<div class='block green'>
-    TO DO LIST <br>
-    <hr>
-    
+    <!-- [START green block] -->
+    <div class="block green">
+        <!-- add a new to do-->
+        <div class="title">todo list</div>
+        <form action='/add_entry' method='post'>
+            <input type='text' name='todo_entry' autofocus>
+            <input class="green" type='submit' value='->'>
+        </form>
+    </div>
+    <!-- [END green block] -->
+
+    <img class="logo" src="static/jm.jpeg" alt="jm" style="width:50px;height:50px;">
+
+    <!-- [START blue block] -->
+    <div id="displayBlock" class="block blue">
+        <div class="title blue">list</div>
+        <!-- [START to do list] -->
         {% for entry in entry_list %}
-    <form action='/delete' method='get'>
-        <input type='submit' value='X'>
-        {{ entry.content }}
-               <input type="hidden" value='{{ entry.content }}' name="entry_to_delete">
-           </form>
+        <form action='/delete_entry?content={{entry.content}}' method='post'>
+            <input type='submit' value='X'>
+            {{ entry.content }}
+            <input type="hidden" value='{{ entry.content }}' name="entry_to_delete">
+        </form>
         {% endfor %}
-    
+        <!-- [END to do list] -->
+    </div>
+    <!-- [END blue block] -->
+
 </div>
 </body>
 </html>
-
-<!--<form action='/remove' method='post'>-->
-<!--{% for number in todo_list %}-->
-<!--<input type='checkbox' name='number_to_delete' value='{{number}}'> {{ number }}<br>-->
-<!--{% endfor %}-->
-<!--<input type='submit' value='remove todo'>-->
-<!--</form>-->

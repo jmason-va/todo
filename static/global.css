@@ -7,6 +7,7 @@
     border-radius: 4px;
     vertical-align: top;
     border: 1px grey;
+    margin-top: 10%;
     padding: 5px;
     color: white;
     width: 350px;
@@ -17,11 +18,10 @@
 .title {
     padding: 10px;
     width: 330px;
-    height: 50px;
     background-color: seagreen;
     display: block;
     text-align: left;
-    margin-top: 1px;
+    margin-bottom: 10px;
 }
 
 .title.green {
@@ -41,7 +41,7 @@
 }
 
 .logo {
-    margin-top: 20%;
+    margin-top: 10%;
     display: inline-block;
 }
 
@@ -94,7 +94,7 @@ button {
     display: inline-block;
     font-size: 16px;
     margin: 0px;
-    cursor: pointer;
+    cursor: hand;
 }
 
 body {
