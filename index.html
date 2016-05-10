@@ -4,7 +4,7 @@
     <link type='text/css' rel='stylesheet' href='static/global.css' rel='stylesheet'>
 
     <meta charset='UTF-8'>
-    <title>Title</title>
+    <title>todo</title>
     <script>
 
     </script>
@@ -12,35 +12,34 @@
 <body>
 
 <div class="container">
+    <!-- [START blue block] -->
+    <div id="displayBlock" class="block red">
+        <div class="title red">todo list</div>
 
-    <!-- [START green block] -->
-    <div class="block green">
-        <!-- add a new to do-->
-        <div class="title">todo list</div>
         <form action='/add_entry' method='post'>
             <input type='text' name='todo_entry' autofocus>
-            <input class="green" type='submit' value='->'>
+            <input class="red" type='submit' value='->' class="arrow">
         </form>
-    </div>
-    <!-- [END green block] -->
+        <br><br>
 
-    <img class="logo" src="static/jm.jpeg" alt="jm" style="width:50px;height:50px;">
-
-    <!-- [START blue block] -->
-    <div id="displayBlock" class="block blue">
-        <div class="title blue">list</div>
         <!-- [START to do list] -->
-        {% for entry in entry_list %}
-        <form action='/delete_entry?content={{entry.content}}' method='post'>
-            <input type='submit' value='X'>
-            {{ entry.content }}
-            <input type="hidden" value='{{ entry.content }}' name="entry_to_delete">
-        </form>
-        {% endfor %}
+        <ul class="entry">
+            {% for entry in entry_list %}
+            <li>
+                <form action='/delete_entry?content={{entry.content}}' method='post'>
+                    <input type='submit' value='X'>
+                    <span class="entry">{{ entry.content }}</span>
+                    <input type="hidden" value='{{ entry.content }}' name="entry_to_delete">
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
         <!-- [END to do list] -->
     </div>
     <!-- [END blue block] -->
 
 </div>
+<img class="logo" src="static/jm.jpeg" alt="jm">
+
 </body>
 </html>

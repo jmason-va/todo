@@ -8,32 +8,29 @@
     vertical-align: top;
     border: 1px grey;
     margin-top: 10%;
-    padding: 5px;
     color: white;
-    width: 350px;
+    min-width: 25%;
     display: inline-block;
     text-align: left;
 }
 
 .title {
-    padding: 10px;
-    width: 330px;
-    background-color: seagreen;
+    border-radius: 4px 4px 0 0;
+    width: 100%;
     display: block;
-    text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+
 }
 
-.title.green {
-    background-color: mediumseagreen;
+.title.red {
+    background-color: lightcoral;
 }
 
-.title.blue {
-    background-color: lightskyblue;
-}
-
-.block.green {
-    background-color: mediumspringgreen;
+.red {
+    background-color: indianred;
 }
 
 .block.blue {
@@ -41,8 +38,12 @@
 }
 
 .logo {
-    margin-top: 10%;
     display: inline-block;
+    width:50px;
+    height:50px;
+    position: fixed;
+    bottom: 560px;
+    right: 1000px;
 }
 
 input[type=checkbox] {
@@ -68,17 +69,23 @@ input[type=checkbox]:checked {
     border-right-color: #06F;
 }
 
-input[type=checkbox]:hover {
-    box-shadow: 0px 0px 10px #1300ff;
+input[type=text] {
+    background-color: indianred;
+    width: 70%;
 }
 
-.categories {
+input[type=submit] {
+    background-color: palevioletred;
+    width: 18%;
+}
+
+.entry {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
 }
 
-.categories li:hover {
+.entry li:hover {
     color: grey;
     background-color: mediumspringgreen;
     left: .1em;
@@ -110,6 +117,10 @@ body {
 
 .row {
     display: block;
-    width:100%;
+    width: 100%;
     padding: 10px;
+}
+
+li {
+    list-style-type: none;
 }
