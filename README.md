@@ -1,3 +1,3 @@
 # todo
 
-a simple stand alone todo application
+a simple stand alone to do list

@@ -23,7 +23,7 @@ class Entry(ndb.Model):
         key = cls.build_key(content)
         entry = key.get()               # if there is an entry in the database get it
         if entry is not None:           # make sure that there isnt existing data
-            raise ValueError("A MyModel with that unique_id already exists.")
+            return
         new_entry = cls(key=key, content=content)       # create a new entry with the key and properties
         new_entry.put()                                 # put the entry in the database
         return new_entry                                # return the new entry in case they want to set it to something
@@ -42,7 +42,8 @@ class MainPage(webapp2.RequestHandler):
 class AddEntry(webapp2.RequestHandler):
     def post(self):
         content = self.request.get('todo_entry')
-        Entry.create_entry(content)
+        if content != '':
+            Entry.create_entry(content)
         self.redirect('/?')
 
 

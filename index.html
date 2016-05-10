@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+    <link rel="icon" src="/static/jm.jpeg">
     <link type='text/css' rel='stylesheet' href='static/global.css' rel='stylesheet'>
-
-    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <!--<meta charset='UTF-8'>-->
     <title>todo</title>
-    <script>
-
-    </script>
 </head>
 <body>
 
 <div class="container">
     <!-- [START blue block] -->
     <div id="displayBlock" class="block red">
-        <div class="title red">todo list</div>
+        <div class="title">todo list</div>
 
         <form action='/add_entry' method='post'>
             <input type='text' name='todo_entry' autofocus>
-            <input class="red" type='submit' value='->' class="arrow">
+            <input align="right" class="red arrow" type='submit' value='add'>
         </form>
-        <br><br>
+        <br>
 
         <!-- [START to do list] -->
         <ul class="entry">
             {% for entry in entry_list %}
             <li>
                 <form action='/delete_entry?content={{entry.content}}' method='post'>
-                    <input type='submit' value='X'>
+                    <input class="red" type='submit' value='X'>
                     <span class="entry">{{ entry.content }}</span>
                     <input type="hidden" value='{{ entry.content }}' name="entry_to_delete">
                 </form>
@@ -39,7 +37,12 @@
     <!-- [END blue block] -->
 
 </div>
-<img class="logo" src="static/jm.jpeg" alt="jm">
+<div class="footerholder">
+    <div class="footer">
+        <img src="/static/jm.jpeg" alt="jm" class="logo">
+
+    </div>
+</div>
 
 </body>
 </html>

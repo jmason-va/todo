@@ -6,9 +6,9 @@
 .block {
     border-radius: 4px;
     vertical-align: top;
-    border: 1px grey;
+    border: 2px grey;
     margin-top: 10%;
-    color: white;
+    color: #fff;
     min-width: 25%;
     display: inline-block;
     text-align: left;
@@ -22,61 +22,32 @@
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
+    background-color: #4d90fe;
 
-}
-
-.title.red {
-    background-color: lightcoral;
 }
 
 .red {
-    background-color: indianred;
-}
+    background-color: whitesmoke;
+    -webkit-appearance: none;
 
-.block.blue {
-    background-color: deepskyblue;
 }
 
 .logo {
-    display: inline-block;
-    width:50px;
-    height:50px;
-    position: fixed;
-    bottom: 560px;
-    right: 1000px;
-}
-
-input[type=checkbox] {
-    text-align: left;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 4px;
-
-    border: double 2px #00F;
-
-    background-color: #0b0095;
-    color: #FFF;
-    white-space: nowrap;
-    overflow: hidden;
-
-    width: 15px;
-    height: 15px;
-}
-
-input[type=checkbox]:checked {
-    background-color: #000;
-    border-left-color: #06F;
-    border-right-color: #06F;
+    width: 50px;
+    height: 50px;
 }
 
 input[type=text] {
-    background-color: indianred;
-    width: 70%;
+    background-color: #4d90fe;
+    width: 78%;
+    height: 17px;
+    color: white;
 }
 
 input[type=submit] {
-    background-color: palevioletred;
+    background-color: #4d90fe;
     width: 18%;
+    height: 17px;
 }
 
 .entry {
@@ -86,22 +57,9 @@ input[type=submit] {
 }
 
 .entry li:hover {
-    color: grey;
-    background-color: mediumspringgreen;
+    color: silver;
+    background-color: #4d90fe;
     left: .1em;
-}
-
-button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 0px;
-    text-align: left;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 0px;
-    cursor: hand;
 }
 
 body {
@@ -115,12 +73,44 @@ body {
     padding-top: 50px;
 }
 
-.row {
-    display: block;
-    width: 100%;
-    padding: 10px;
-}
-
 li {
     list-style-type: none;
+    text-shadow: 0px 1px 1px silver;
+    color: #4d90fe;
+}
+
+.arrow {
+    float: right;
+    -webkit-appearance: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .block {
+        border-radius: 4px;
+        vertical-align: top;
+        border: 1px grey;
+        margin-top: 10%;
+        color: white;
+        width: 100%;
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+.footerholder {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    width: 98.5%;
+    -webkit-appearance: none;
+
+}
+
+.footer {
+    height: 100px;
+    margin: auto;
+    width: 400px;
+    -webkit-appearance: none;
+
 }
